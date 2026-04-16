@@ -1,13 +1,13 @@
 import express from 'express';
 import {createProject, getProject, updateProject, deleteProject} from '../controllers/project.controller.js'
-import Project from '../models/projectDTO.js';
+import { validateProject } from '../middlewares/validateProject.js';
 
 const router = express.Router();
 
-router.post('/', createProject);
-router.get('/', getProject);
-router.get('/:code',getProject);
-router.put("/", updateProject);
-router.delete("/", deleteProject)
+router.post('/', validateProject, createProject);
+router.get('/', validateProject, getProject);
+router.get('/:code', validateProject, getProject);
+router.put("/", validateProject, updateProject);
+router.delete("/",validateProject, deleteProject)
 
 export default router;

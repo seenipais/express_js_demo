@@ -4,6 +4,7 @@ const employeeSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+     trim: true
   },
   email: {
     type: String,
@@ -22,7 +23,8 @@ const employeeSchema = new mongoose.Schema({
   project: String,
   isdelete: {
     type: Boolean,
-    required: false
+    required: false,
+    default : false
   },
   createdBy: String,
 //   createdAt: {

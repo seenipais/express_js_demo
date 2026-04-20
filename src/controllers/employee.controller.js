@@ -27,7 +27,7 @@ export const createEmployee = async (req, res) => {
 
 export const getEmployee = async (req, res) => {
   try {
-    const employee = await getEmployeeService();
+    const employee = await getEmployeeService(req.body);
 
     return sendResponse(res,{
       code: 200,

@@ -2,8 +2,8 @@ import Project from "../models/projectDTO.js";
 
 export const validateProject = async (req, res, next) => {
     try {
-        const { name, code } = req.body;
-
+        const { name } = req.body;
+        const code = req.body.code ?? req.params.code;
         if (!name || !code) {
             return res.status(200).json({
                 code: 400,
@@ -22,8 +22,8 @@ export const validateProject = async (req, res, next) => {
 
         const existingProject = await Project.findOne({
             $or: [
-                { name: name.trim() },
-                { code: code.trim() }
+                { name: name?.trim() ?? '' },
+                { code: code?.trim() ?? req?.params?.code}
             ]
         });
 

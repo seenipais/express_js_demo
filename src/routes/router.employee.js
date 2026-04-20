@@ -4,7 +4,7 @@ import { validateEmployee } from '../middlewares/validateEmployee.js';
 const router = express.Router();
 
 router.post('/', validateEmployee, createEmployee);
-router.get('/', validateEmployee, getEmployee);
+router.get('/', getEmployee);
 router.put("/", validateEmployee, updateEmployee);
 router.delete("/:id", validateEmployee, deleteEmployee)
 

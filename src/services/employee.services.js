@@ -5,8 +5,14 @@ export const createEmployeeService = async (data) => {
   return await Employee.create(data);
 };
 
-export const getEmployeeService = async () => {
-  return await Employee.find();
+export const getEmployeeService = async (req) => {
+  const query = { isdelete: false };
+
+  if (req?.id) query._id = req.id;
+  if (req?.employeeId) query.employeeId = req.employeeId;
+  if (req?.role) query.role = req.role;
+  if (req?.project) query.project = req.project;
+  return await Employee.find(query);
 };
 
 export const updateEmployeeService = async (id, data) => {

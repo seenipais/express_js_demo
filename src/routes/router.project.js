@@ -5,8 +5,8 @@ import { validateProject } from '../middlewares/validateProject.js';
 const router = express.Router();
 
 router.post('/', validateProject, createProject);
-router.get('/', validateProject, getProject);
-router.get('/:code', validateProject, getProject);
+router.get('/', getProject);
+router.get('/:code', getProject);
 router.put("/", validateProject, updateProject);
 router.delete("/",validateProject, deleteProject)
 

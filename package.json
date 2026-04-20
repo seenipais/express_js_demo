@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "set DEBUG=expressjs-app:* && node ./src/server.js",
-    "dev"  : "set DEBUG=expressjs-app:* && nodemon ./src/server.js"
+    "dev": "set DEBUG=expressjs-app:* && nodemon ./src/server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

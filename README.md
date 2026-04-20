@@ -45,13 +45,13 @@ server.js → Entry point
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/expressjs-app.git
+git clone  https://github.com/seenipais/express_js_demo.git
 cd expressjs-app
 npm install
 
 Create a .env file in root directory:
 PORT=3002
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://127.0.0.1:27017/employeesDB
 
 Architecture Flow
 

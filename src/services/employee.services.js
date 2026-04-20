@@ -6,13 +6,15 @@ export const createEmployeeService = async (data) => {
 };
 
 export const getEmployeeService = async (req) => {
-  const query = { isdelete: false };
+  const query = {
+    isdelete: req?.isdelete ?? false, 
+   };
 
   if (req?.id) query._id = req.id;
   if (req?.employeeId) query.employeeId = req.employeeId;
   if (req?.role) query.role = req.role;
   if (req?.project) query.project = req.project;
-  return await Employee.find(query);
+  return await Employee.find(query).populate("project");
 };
 
 export const updateEmployeeService = async (id, data) => {

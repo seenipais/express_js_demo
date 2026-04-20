@@ -37,13 +37,13 @@ export const validateEmployee = async (req, res, next) => {
             ]
         });
 
-        if (existingEmployee) {
-            return res.status(200).json({
-                code: 409,
-                message: "Employee already exists (email or employeeId duplicate)",
-                data: null
-            });
-        }
+        // if (existingEmployee) {
+        //     return res.status(200).json({
+        //         code: 409,
+        //         message: "Employee already exists (email or employeeId duplicate)",
+        //         data: null
+        //     });
+        // }
         next();
 
     } catch (error) {

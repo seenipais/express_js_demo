@@ -20,12 +20,19 @@ const employeeSchema = new mongoose.Schema({
     unique: true,
     required : true
   },
-  project: String,
+  // project: String,
   isdelete: {
     type: Boolean,
     required: false,
     default : false
   },
+
+  project : {
+    type : mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'projectDTO'
+  },
+
   createdBy: String,
 //   createdAt: {
 //     type: Date ,
